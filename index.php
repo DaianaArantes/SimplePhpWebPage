@@ -3,16 +3,27 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>InclassTask8</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
 <body>
-    <form action="ProcessData.php" method="post">
-        <input type="checkbox" name="preference[]" value="Conestoga Casserole">Conestoga Casserole<br /> 
-        <input type="checkbox" name="preference[]" value="Conestoga Sandwich">Conestoga Sandwich<br /> 
-        <input type="checkbox" name="preference[]" value="Conestoga Pie">Conestoga Pie<br /> 
-        <input type="checkbox" name="preference[]" value="Grilled Conestoga">Grilled Conestoga<br /> 
-        <input type="checkbox" name="preference[]" value="Conestoga Surprise">Conestoga Surprise<br />
-        <input type="submit" value="Click to Submit"> <input type="reset" value="Erase and Restart">
-    </form>   
+    <header>
+    <h1>Welcome to Conestoga Cafe</h1>
+    <h2>Please select your preferences</h2>
+    </header>
+    <main>
+		<form action="ProcessData.php" method="post">
+			<?php	
+				$arry1=array("Conestoga Casserole","Conestoga Sandwich","Conestoga Pie","Grilled Conestoga","Conestoga Surprise");		
+				for ($i=0; $i<5; $i++){
+					$sn=$i+1;	
+					echo "<input type=\"checkbox\" name=\"preference[]\" value=\"$sn\">$arry1[$i]<br/> ";
+				}		
+			?>  
+        
+			<input type="submit" value="Click to Submit"> 
+			<input type="reset" value="Erase and Restart">
+		</form>   
+    </main> 
 </body>
 </html>
